@@ -1,0 +1,44 @@
+﻿@model DoctorsAppointment.Models.ViewModels.LoginViewModel
+
+<h2>Sign in</h2>
+<form id="account" method="post" asp-action="Login" asp-controller="Account">
+    <h4> Use your registered E-mail and Password to login</h4>
+    <hr />
+    <div asp-validation-summary="All" class="danger"></div>
+    <div class="form-group row">
+        <label asp-for="Email" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <br />
+    <div class="form-group row">
+        <label asp-for="Password" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+    <br />
+    <div class="form-group row">
+        <div class="col-md-10 offset-md-2 checkbox">
+            <label asp-for="RememberMe"></label>
+            <input asp-for="RememberMe" />
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-10 offset-md-2">
+            <input type="submit" value="Log in" class="btn btn-outline-primary" />
+        </div> 
+    </div>
+    <br />
+    <p class="col-md-10 offset-md-2">
+        <a asp-action="Register">Sign up</a>
+    </p>
+</form>
+ 
+   @section Scripts {
+       <partial name="_ValidationScriptsPartial" />
+   }
